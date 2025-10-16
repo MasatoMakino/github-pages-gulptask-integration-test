@@ -1,0 +1,24 @@
+{
+  "name": "github-pages-gulptask-integration-test",
+  "version": "0.1.0",
+  "description": "Integration test repository for GitHub Pages deployment action with gulptask-demo-page bundler",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "gulptask-demo-page",
+    "watch": "gulptask-demo-page -W"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MasatoMakino/github-pages-gulptask-integration-test.git"
+  },
+  "author": "MasatoMakino <unagiinu.g@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@masatomakino/gulptask-demo-page": "^0.10.1"
+  },
+  "bugs": {
+    "url": "https://github.com/MasatoMakino/github-pages-gulptask-integration-test/issues"
+  },
+  "homepage": "https://github.com/MasatoMakino/github-pages-gulptask-integration-test#readme"
+}
