@@ -21,7 +21,7 @@ function initDemoPage() {
 
   // Add some timestamp information
   const timestamp = document.createElement("div");
-  timestamp.textContent = `Built at: ${new Date().toISOString()}`;
+  timestamp.textContent = `Loaded at: ${new Date().toISOString()}`;
   timestamp.style.cssText = `
     font-family: monospace;
     font-size: 14px;
