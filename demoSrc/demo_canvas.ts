@@ -29,6 +29,7 @@ function initCanvasDemo() {
 
   // Draw a simple animation
   let hue = 0;
+  let angle = 0;
 
   function draw(context: CanvasRenderingContext2D) {
     // Clear canvas
@@ -37,8 +38,8 @@ function initCanvasDemo() {
 
     // Draw animated circle
     context.fillStyle = `hsl(${hue}, 70%, 50%)`;
-    const x = canvas.width / 2 + Math.cos(hue / ANIMATION_SPEED) * ORBIT_RADIUS_X;
-    const y = canvas.height / 2 + Math.sin(hue / ANIMATION_SPEED) * ORBIT_RADIUS_Y;
+    const x = canvas.width / 2 + Math.cos(angle) * ORBIT_RADIUS_X;
+    const y = canvas.height / 2 + Math.sin(angle) * ORBIT_RADIUS_Y;
     context.beginPath();
     context.arc(x, y, CIRCLE_RADIUS, 0, Math.PI * 2);
     context.fill();
@@ -50,6 +51,7 @@ function initCanvasDemo() {
     context.fillText("Canvas Demo - Integration Test", canvas.width / 2, 50);
 
     hue = (hue + 1) % 360;
+    angle += 1 / ANIMATION_SPEED;
     requestAnimationFrame(() => draw(context));
   }
 
