@@ -20,6 +20,12 @@ if (!ctx) {
   throw new Error("Could not get canvas context");
 }
 
+// Animation constants
+const ANIMATION_SPEED = 50;
+const ORBIT_RADIUS_X = 200;
+const ORBIT_RADIUS_Y = 150;
+const CIRCLE_RADIUS = 50;
+
 // Draw a simple animation
 let hue = 0;
 
@@ -30,10 +36,10 @@ function draw() {
 
   // Draw animated circle
   ctx.fillStyle = `hsl(${hue}, 70%, 50%)`;
-  const x = canvas.width / 2 + Math.cos(hue / 50) * 200;
-  const y = canvas.height / 2 + Math.sin(hue / 50) * 150;
+  const x = canvas.width / 2 + Math.cos(hue / ANIMATION_SPEED) * ORBIT_RADIUS_X;
+  const y = canvas.height / 2 + Math.sin(hue / ANIMATION_SPEED) * ORBIT_RADIUS_Y;
   ctx.beginPath();
-  ctx.arc(x, y, 50, 0, Math.PI * 2);
+  ctx.arc(x, y, CIRCLE_RADIUS, 0, Math.PI * 2);
   ctx.fill();
 
   // Draw text
